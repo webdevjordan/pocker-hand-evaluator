@@ -1,2 +1,2 @@
-# pocker-game-code-assessment
+# pocker hand evaluator
 code-
