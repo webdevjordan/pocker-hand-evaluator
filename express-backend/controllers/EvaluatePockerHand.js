@@ -2,9 +2,7 @@
 import pockersolver from 'pokersolver';
 
 class EvaluatePockerHand {
-    pockerSolver = null;
-    result = {};
-
+   
     constructor() {
         this.pockerSolver = pockersolver.Hand;
     }

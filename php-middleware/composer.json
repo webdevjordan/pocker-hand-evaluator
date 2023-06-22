@@ -1,0 +1,24 @@
+{
+    "name": "jordan.wynne/pocker-hand-evaluator-code-assessment",
+    "description": "Pocker Hand Evaluator",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "PockerEval\\": [
+                "src/classes/",
+                "src/services/"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Jordan Wynne",
+            "email": "jordan.q.wynne@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.6",
+        "guzzlehttp/guzzle": "^7.7"
+    }
+}

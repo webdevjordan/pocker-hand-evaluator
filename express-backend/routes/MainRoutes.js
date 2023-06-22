@@ -1,10 +1,7 @@
 import EvaluatePockerHand from "../controllers/EvaluatePockerHand.js";
 
 class MainRoutes {
-    app = null;
-    routeMainName = null;
-    evaluatePockerHand = null;
-    
+     
     constructor(app) {
         this.app = app;
         this.routeMainName = '/pocker-evaluator/api/v1';
@@ -23,7 +20,6 @@ class MainRoutes {
                 res.status(400);
                 return res.send({err : 'Missing request body'});
             }
-
             let result = this.evaluatePockerHand.evaluate(cardsInHand);
             res.status(200);
             return res.send(result);
