@@ -45,7 +45,7 @@ const validHand = (cards) => {
 
 // make a request to our middleware layer
 const makeRequest = async (hand) => {
-    const url = `http://localhost/practice-projects/pocker-hand-evaluator-code-assessment/php-middleware/public/`;
+    const url = `http://localhost/pocker-hand-evaluator-code-assessment/php-middleware/public/`;
     // request data
     const requestData = {
         card1: hand[0],
