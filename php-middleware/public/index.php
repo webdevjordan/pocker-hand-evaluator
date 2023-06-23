@@ -11,12 +11,16 @@
 use PockerEval\PockerEvalutor;
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-$oRequestData = file_get_contents('php://input');
-$aRequestData = json_decode($oRequestData, true);
-if (isset($aRequestData)) {
-    $oPockerEval = new PockerEvalutor();
-    $aReturn = $oPockerEval->handlePockerEvalution($aRequestData);
-    echo json_encode($aReturn);
-    return;
+
+if (isset($_POST)) {
+    $oRequestData = file_get_contents('php://input');
+    if (isset($oRequestData)) {
+        $aRequestData = json_decode($oRequestData, true);
+        $oPockerEval = new PockerEvalutor();
+        $aReturn = $oPockerEval->handlePockerEvalution($aRequestData);
+        echo json_encode($aReturn);
+       return;
+    } else {
+        echo json_encode(['body' => 'missing request data']);
+    }
 }
-echo json_encode(['body' => 'missing request data']);
