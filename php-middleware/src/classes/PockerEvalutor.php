@@ -27,7 +27,7 @@ class PockerEvalutor
         }
 
         // format the card data packet by removing key names
-        $aFormatedCardDataPacket =  array_values($aCardDataPacket);
+        $aFormatedCardDataPacket = $this->formatCardDataPacket($aCardDataPacket); 
         if (count($aFormatedCardDataPacket) < 4) {
             $aResult['status'] = 400;
             $aResult['body'] = 'Invalid card count';
@@ -40,6 +40,21 @@ class PockerEvalutor
 
         // return something
         return $aResult;
+    }
+
+    /**
+     * helper function to format the data backet
+     *
+     * @param array $aCardDataPacket
+     * @return array
+     */
+    private function formatCardDataPacket($aCardDataPacket)
+    {
+        $aFormatedCardDataPacket = array_values($aCardDataPacket);
+        foreach ($aFormatedCardDataPacket as $key => $i) {
+            $aFormatedCardDataPacket[$key] = strtoupper($i[0]) . strtolower($i[1]);
+        }
+        return $aFormatedCardDataPacket;
     }
 
 }
